@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link  rel="stylesheet" type="text/css" href="{% static 'styles/login.css' %}">
+</head>
+<body>
+<div class="login">
+  <h2 class="active"> sign in </h2>
+  <form method="post" action="login">
+    {% csrf_token %}
+
+
+    <input type="text" class="text" name="username">
+     <span>username</span>
+
+    <br>
+
+    <br>
+
+    <input type="password" class="text" name="password">
+    <span>password</span>
+    <br>
+
+
+    <button class="signin">
+      Sign In
+    </button>
+
+
+    <hr>
+
+    <a href="#">Forgot Password?</a>
+  </form>
+
+</div>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
